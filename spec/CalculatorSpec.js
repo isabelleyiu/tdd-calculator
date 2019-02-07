@@ -34,4 +34,27 @@ describe("Calculator", function() {
       expect(calculator.calculate("88 - 32")).toEqual(56);
     });
   });
+
+  describe("when given an empty string", function() {
+    it("should return 0", function() {
+      expect(calculator.calculate("")).toEqual(0);
+    });
+  });
+
+  describe("when given a string with leading or trailing spaces", function() {
+    it("should add", function() {
+      expect(calculator.calculate(" 1 + 2")).toEqual(3);
+    });
+
+    it("should add", function() {
+      expect(calculator.calculate("9 - 5 ")).toEqual(4);
+    });
+  });
+  describe("when given a string 2 operators and 3 numbers", function() {
+    it("should add", function() {
+      expect(calculator.calculate("1 + 2 + 3")).toEqual(6);
+    });
+
+  });
+
 });
