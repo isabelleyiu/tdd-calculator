@@ -50,11 +50,17 @@ describe("Calculator", function() {
       expect(calculator.calculate("9 - 5 ")).toEqual(4);
     });
   });
+  
   describe("when given a string 2 operators and 3 numbers", function() {
     it("should add", function() {
       expect(calculator.calculate("1 + 2 + 3")).toEqual(6);
     });
+  });
 
+  describe("when given multiple operators", function() {
+    it("should calculate the result", function() {
+      expect(calculator.calculate("10 + 2 - 4 + 4 - 10")).toEqual(2);
+    });
   });
 
 });
